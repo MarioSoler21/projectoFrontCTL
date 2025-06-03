@@ -1,0 +1,26 @@
+{
+  "name": "progrmacion-web",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "parcel public/index.html",
+    "build": "parcel build public/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarioSoler21/proyectoclaseMarioSoler/issues"
+  },
+  "homepage": "https://github.com/MarioSoler21/proyectoclaseMarioSoler#readme",
+  "description": "",
+  "dependencies": {
+    "bootstrap": "^5.3.5",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^6.30.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.15.1"
+  }
+}
