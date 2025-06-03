@@ -1,23 +1,37 @@
 import CardItem from "../components/CardItem";
+import { useEffect, useState } from "react";
 
 function Home({ items }) {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div>
-      {/* Hero con imagen de fondo a lo ancho */}
+      {/* Hero con imagen de fondo difuminado */}
       <div
-        className="text-white d-flex align-items-center justify-content-center"
+        className={`text-white d-flex align-items-center justify-content-center position-relative ${scrolled ? "blur-overlay" : ""}`}
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1950&q=80')`,
+          backgroundImage:
+            "linear-gradient(to bottom, rgba(87,50,185,0.7), rgba(47,112,196,0.9)), url('https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           height: "80vh",
           width: "100vw",
           marginLeft: "calc(-50vw + 50%)",
+          transition: "filter 0.5s ease",
         }}
       >
         <div className="text-center">
           <h1 className="display-3 fw-bold">
-            Consultoría Fiscal{" "}
+            Consultoría Fiscal {" "}
             <span className="px-2 bg-primary text-white rounded">
               Profesional
             </span>
@@ -37,7 +51,7 @@ function Home({ items }) {
       <div className="bg-light py-5">
         <div className="container">
           <h2 className="text-center fw-semibold mb-4">
-            Proximas Capacitaciones{" "}
+            Próximas Capacitaciones {" "}
           </h2>
           <p className="text-center mb-5">
             Actualizamos a tu equipo contable y financiero con contenido
@@ -103,8 +117,8 @@ function Home({ items }) {
               <div className="col" key={i}>
                 <div className="card h-100 shadow-sm border-0">
                   <div className="card-body">
-                    <h5 className="card-title text-primary">{cap.mes}</h5>
-                    <p className="card-text fw-semibold">{cap.tema}</p>
+                    <h5 className="card-title text-primary fs-4">{cap.mes}</h5>
+                    <p className="card-text fw-semibold fs-5">{cap.tema}</p>
                     <p className="card-text">
                       <span className="badge bg-secondary">
                         Modalidad: In Company

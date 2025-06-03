@@ -43,11 +43,13 @@ function TopNavBar() {
               <a className="nav-link" href="/equipo">Equipo</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/home">Capacitaciones</a>
+              <a className="nav-link" href="/calendario">Calendario</a> 
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/calendario">Calendario</a> {/* ✅ NUEVO LINK */}
+
+             <li className="nav-item">
+              <a className="nav-link" href="/capacitaciones">Capacitaciones</a> 
             </li>
+
           </ul>
         </div>
       </div>
