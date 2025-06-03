@@ -9,7 +9,7 @@ function TopNavBar() {
           <img
             src="https://i.ibb.co/Mx0qcxtt/Logox2.png"
             alt="Logo CTL Empresariales"
-            width="50"
+            width="90"
             height="50"
             className="me-2"
             style={{ objectFit: 'contain' }}
@@ -42,6 +42,7 @@ function TopNavBar() {
             <li className="nav-item">
               <a className="nav-link" href="/equipo">Equipo</a>
             </li>
+
             <li className="nav-item">
               <a className="nav-link" href="/calendario">Calendario</a> 
             </li>
