@@ -4,13 +4,15 @@ import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Services from "./pages/Services";
 import Equipo from "./pages/Equipo";
-import CalendarPage from "./pages/CalendarPage";
-import CapacitacionesPage from "./pages/CapacitacionesPage"; // ✅ Nombre correcto
+import CalendarPage from "./pages/masters/CalendarPage";
+import CapacitacionesPage from "./pages/CapacitacionesPage"; 
 import MainLayout from "./layouts/MainLayout";
 import Footer from "./components/Footer";
-import 'bootstrap/dist/css/bootstrap.min.css'; // ✅ Importar Bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+import './App.css';
 
-const items = []; // Si estás pasando props a Home
+
+const items = []; 
 
 function App() {
   return (

@@ -18,14 +18,16 @@ function Home({ items }) {
     "https://i.ibb.co/GfdyM4r6/Picture4.jpg",
     "https://i.ibb.co/sJk6cVjn/Picture3.jpg",
     "https://i.ibb.co/2mmxnwz/Picture2.jpg",
-    "https://i.ibb.co/fVrpsb8H/Picture1.jpg"
+    "https://i.ibb.co/fVrpsb8H/Picture1.jpg",
   ];
 
   return (
     <div>
       {/* Hero con imagen de fondo difuminado */}
       <div
-        className={`text-white d-flex align-items-center justify-content-center position-relative ${scrolled ? "blur-overlay" : ""}`}
+        className={`text-white d-flex align-items-center justify-content-center position-relative ${
+          scrolled ? "blur-overlay" : ""
+        }`}
         style={{
           backgroundImage:
             "linear-gradient(to bottom, rgba(87,50,185,0.7), rgba(47,112,196,0.9)), url('https://ecovis.hn/wp-content/uploads/2023/04/lawyers-and-businessmen-join-hands-in-business-aft-2023-01-18-05-08-05-utc-min-1536x820.jpg')",
@@ -39,7 +41,7 @@ function Home({ items }) {
       >
         <div className="text-center">
           <h1 className="display-3 fw-bold">
-            Consultoría Fiscal {" "}
+            Consultoría Fiscal{" "}
             <span className="px-2 bg-primary text-white rounded">
               Profesional
             </span>
@@ -55,69 +57,37 @@ function Home({ items }) {
         </div>
       </div>
 
-      {/* Sección de Capacitaciones */}
-      <div className="bg-light py-5">
-        <div className="container">
-          <h2 className="text-center fw-semibold mb-4">
-            Próximas Capacitaciones {" "}
-          </h2>
-          <p className="text-center mb-5">
-            Actualizamos a tu equipo contable y financiero con contenido
-            práctico, legal y técnico, adaptado a tus necesidades.
-          </p>
-
-          <div className="row text-center mb-4">
-            <div className="col-md-3">
-              <i className="bi bi-journal-text display-5 text-primary mb-3"></i>
-              <p className="fw-semibold">Contenido práctico y personalizado</p>
-            </div>
-            <div className="col-md-3">
-              <i className="bi bi-person-check-fill display-5 text-primary mb-3"></i>
-              <p className="fw-semibold">Capacitadores con experiencia</p>
-            </div>
-            <div className="col-md-3">
-              <i className="bi bi-building display-5 text-primary mb-3"></i>
-              <p className="fw-semibold">
-                En tu empresa (presencial o virtual)
-              </p>
-            </div>
-            <div className="col-md-3">
-              <i className="bi bi-lightbulb display-5 text-primary mb-3"></i>
-              <p className="fw-semibold">Actualización frente a reformas</p>
-            </div>
-          </div>
-
-          <h4 className="text-center mb-4">Próximas Capacitaciones - 2025</h4>
-
-          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-            {["Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre"].map((mes, i) => (
-              <div className="col" key={i}>
-                <div className="card h-100 shadow-sm border-0">
-                  <div className="card-body">
-                    <h5 className="card-title text-primary fs-4">{mes}</h5>
-                    <p className="card-text fw-semibold fs-5">Tema de capacitación {i + 1}</p>
-                    <p className="card-text">
-                      <span className="badge bg-secondary">
-                        Modalidad: In Company
-                      </span>
-                    </p>
-                    <p className="card-text">
-                      <i className="bi bi-clock"></i> {i < 3 ? "6" : "4"} horas
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
+      <h1>    
+SUGERENCIAS 
+      </h1>
+      <h2>    
+QUE PONER ACA SINO ASI LO DEJO 
+      </h2>
+            <h1>    
+SUGERENCIAS 
+      </h1>
+      <h2>    
+QUE PONER ACA SINO ASI LO DEJO 
+      </h2>
+            <h1>    
+SUGERENCIAS 
+      </h1>
+      <h2>    
+QUE PONER ACA SINO ASI LO DEJO 
+      </h2>
       {/* Galería tipo video de capacitaciones */}
-      <div className="container-fluid py-5" style={{ background: "linear-gradient(to bottom, #5732b9, #2f70c4)" }}>
+      <div
+        className="container-fluid py-5"
+        style={{ background: "linear-gradient(to bottom, #5732b9, #2f70c4)" }}
+      >
         <div className="row">
           <div className="col-md-6 d-flex flex-column justify-content-center text-white p-5">
             <h2 className="fw-bold mb-3">Información</h2>
-            <p className="fs-5">Contamos con experiencia comprobada en administración tributaria, brindando soluciones personalizadas y prácticas a nuestros clientes.</p>
+            <p className="fs-5">
+              Contamos con experiencia comprobada en administración tributaria,
+              brindando soluciones personalizadas y prácticas a nuestros
+              clientes.
+            </p>
             <ul>
               <li>Diagnóstico fiscal y contable</li>
               <li>Asesoría legal tributaria</li>
@@ -129,7 +99,12 @@ function Home({ items }) {
             <Carousel fade interval={3000} controls={false} indicators={false}>
               {images.map((src, i) => (
                 <Carousel.Item key={i}>
-                  <img className="d-block w-100 rounded" src={src} alt={`Capacitación ${i + 1}`} style={{ maxHeight: "400px", objectFit: "cover" }} />
+                  <img
+                    className="d-block w-100 rounded"
+                    src={src}
+                    alt={`Capacitación ${i + 1}`}
+                    style={{ maxHeight: "400px", objectFit: "cover" }}
+                  />
                 </Carousel.Item>
               ))}
             </Carousel>
@@ -153,6 +128,20 @@ function Home({ items }) {
               EXPERIENCIA EN LA ADMINISTRACIÓN TRIBUTARIA.
             </div>
           )}
+        </div>
+      </div>
+
+      {/* Logos decorativos en movimiento */}
+      <div className="logo-slider-container py-3">
+        <div className="logo-slider d-flex align-items-center">
+          {[...Array(2)].map((_, i) => (
+            <div key={i} className="logo-group d-flex">
+              <img src="https://www.diunsa.hn/assets/imgs/logo.png" alt="Logo 1" className="mx-4" height={60} />
+              <img src="https://lamundial.com/website/image/website/1/logo" alt="Logo 2" className="mx-4" height={60} />
+              <img src="https://eldorado.hn/wp-content/uploads/2020/02/pacer.png" alt="Logo 3" className="mx-4" height={60} />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/La_Prensa_%28Honduras%29.svg/2560px-La_Prensa_%28Honduras%29.svg.png" alt="Logo 4" className="mx-4" height={60} />
+            </div>
+          ))}
         </div>
       </div>
     </div>

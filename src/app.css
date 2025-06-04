@@ -1,4 +1,4 @@
-    body {
+body {
   background-color: #f8f9fa;
   font-family: 'Segoe UI', sans-serif;
   color: #212529;
@@ -25,4 +25,37 @@
 .btn-primary {
   background-color: #0d6efd;
   border-color: #0d6efd;
+}
+
+/* LOGOS EN MOVIMIENTO */
+.logo-slider-container {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.logo-slider {
+  display: flex;
+  animation: scrollLogos 40s linear infinite;
+  width: max-content;
+}
+
+.logo-group {
+  display: flex;
+}
+
+.logo-group img {
+  margin-right: 60px;
+  height: 60px;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.3));
+}
+
+@keyframes scrollLogos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
