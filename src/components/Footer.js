@@ -3,6 +3,7 @@ function Footer() {
     <footer className="bg-dark text-white mt-5 pt-4 pb-3">
       <div className="container text-center text-md-start">
         <div className="row">
+          
 
           {/* Información de la empresa */}
           <div className="col-md-4 mb-3">

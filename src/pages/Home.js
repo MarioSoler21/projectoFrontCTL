@@ -7,7 +7,7 @@ function Home({ items }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 0);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -23,7 +23,7 @@ function Home({ items }) {
 
   return (
     <div>
-      {/* Hero con imagen de fondo difuminado */}
+      {/* imagen de fondo difuminado */}
       <div
         className={`text-white d-flex align-items-center justify-content-center position-relative ${
           scrolled ? "blur-overlay" : ""
@@ -57,24 +57,7 @@ function Home({ items }) {
         </div>
       </div>
 
-      <h1>    
-SUGERENCIAS 
-      </h1>
-      <h2>    
-QUE PONER ACA SINO ASI LO DEJO 
-      </h2>
-            <h1>    
-SUGERENCIAS 
-      </h1>
-      <h2>    
-QUE PONER ACA SINO ASI LO DEJO 
-      </h2>
-            <h1>    
-SUGERENCIAS 
-      </h1>
-      <h2>    
-QUE PONER ACA SINO ASI LO DEJO 
-      </h2>
+
       {/* Galería tipo video de capacitaciones */}
       <div
         className="container-fluid py-5"
