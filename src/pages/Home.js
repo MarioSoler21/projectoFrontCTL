@@ -23,8 +23,7 @@ function Home({ items }) {
 
   return (
     <div>
-      {/* imagen de fondo difuminado */}
-      <div
+      <div 
         className={`text-white d-flex align-items-center justify-content-center position-relative ${
           scrolled ? "blur-overlay" : ""
         }`}

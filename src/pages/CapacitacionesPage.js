@@ -62,7 +62,7 @@ function CapacitacionesPage() {
 
   return (
     <div style={{ backgroundColor: '#f4f6fc', paddingBottom: '6rem' }}>
-      {/* Encabezado */}
+
       <div
         style={{
           background: 'linear-gradient(to right, #5732b9, #2f70c4)',
@@ -78,7 +78,7 @@ function CapacitacionesPage() {
         </p>
       </div>
 
-      {/* Contenido principal */}
+
       <Container style={{ marginTop: '-4rem' }}>
         <div
           className="rounded p-5"
@@ -133,3 +133,4 @@ function CapacitacionesPage() {
 }
 
 export default CapacitacionesPage;
+  
