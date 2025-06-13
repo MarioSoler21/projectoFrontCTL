@@ -3,35 +3,43 @@ import React from "react";
 function Equipo() {
   const miembros = [
     {
-      nombre: "ABG. MICHELLE SOLER",
-      especialidad: "Licenciada en Derecho",
+      nombre: "MDE. LESLY TORRES",
+      especialidad: "Dirección Empresarial y Tributación",
       descripcion:
-        "Con más de 21años de experiencia en laadministración aduanera y tributaria, enáreas de regímenes especiales, ordenesde compras y exoneraciones, asistenciaal cumplimiento y facturación en laAdministración Tributaria de la Direcciónde Grandes Contribuyentes S.P.S.",
+        "Máster en Dirección Empresarial y Comercio Internacional, Licenciada en Contaduría Pública y Finanzas, con más de 20 años de experiencia en la administración tributaria en los cargos de auditor integral, jefe de asistencia al contribuyente, jefe de cobranzas y jefe de cuenta corriente. Ex Directora de la Administración Tributaria de la Dirección de Grandes Contribuyentes S.P.S.",
+      foto: "https://i.ibb.co/YWCrxRf/lesly.jpg",
+    },
+    {
+      nombre: "LIC. MARIANA CEDILLOS",
+      especialidad: "Administración Tributaria",
+      descripcion:
+        "Licenciada en Administración de Empresas, pasante de maestría en Dirección Empresarial, con 11 años de experiencia en materia Tributaria, cuenta corriente y resolución de expedientes administrativos. Ex Coordinadora de Cuenta Corriente del departamento de Recaudación de la Administración Tributaria de la Dirección de Grandes Contribuyentes S.P.S.",
       foto: "https://i.ibb.co/N98jtbJ/mariana.jpg",
     },
     {
-      nombre: "Norka Maldonado",
-      especialidad: "Capacitación y formación tributaria",
+      nombre: "ABG. MICHELLE SOLER",
+      especialidad: "Derecho Tributario y Aduanero",
       descripcion:
-        "Facilitadora con enfoque práctico, especializada en talleres sobre ISR, ISV, facturación y cumplimiento tributario.",
-      foto: "https://i.ibb.co/zRS7ZmD/norka.jpg",
+        "Licenciada en Derecho, con más de 21 años de experiencia en la administración aduanera y tributaria, en áreas de regímenes especiales, órdenes de compras y exoneraciones, asistencia al cumplimiento y facturación en la Administración Tributaria de la Dirección de Grandes Contribuyentes S.P.S.",
+      foto: "https://i.ibb.co/d5jcWrp/michelle.jpg",
     },
     {
-      nombre: "Karla Andino",
-      especialidad: "Régimen de Zonas Libres",
+      nombre: "MRH. Claudia Mancia",
+      especialidad: "Recursos Humanos y Derecho",
       descripcion:
-        "Asesora en temas de incentivos fiscales y comercio exterior. Experiencia con maquilas y trámites en aduanas.",
-      foto: "https://i.ibb.co/6gRpvkV/karla.jpg",
+        "Master en Recursos Humanos, Licenciada en Derecho. Con más de 32 años de experiencia en el campo privado y gubernamental. Secretaria Regional de la Administración Tributaria de la Dirección de Grandes Contribuyentes S.P.S., y Coordinadora de Recepción y Notificación del 2017 al 2023.",
+      foto: "https://i.ibb.co/vXk6FV3/claudia.jpg", // subila y reemplazá el link si es necesario
     },
     {
-      nombre: "Mayra Perdomo",
-      especialidad: "Auditoría y planificación tributaria",
+      nombre: "MAP. Sintia Calderón",
+      especialidad: "Cuenta Corriente y Gestión de Proyectos",
       descripcion:
-        "Contadora pública autorizada con trayectoria en empresas privadas e instituciones del Estado.",
-      foto: "https://i.ibb.co/5B8q4nz/mayra.jpg",
+        "Licenciada en Administración de Empresas, con Maestría en Gestión de Proyectos, experta en cuenta corriente. 6 años de experiencia en Cuenta Corriente y análisis de estados financieros. Ex analista Cuenta Corriente del departamento de Recaudación de la Administración Tributaria de la Dirección de Grandes Contribuyentes S.P.S.",
+      foto: "https://i.ibb.co/pKnRZTh/sintia.jpg", // subila y reemplazá el link si es necesario
     },
+
     {
-      nombre: "Meyling C&aacute;ceres",
+      nombre: "Meyling Cáceres",
       especialidad: "Consultoría fiscal estratégica",
       descripcion:
         "Especialista en informes país por país, precios de transferencia y políticas contables.",
@@ -43,7 +51,8 @@ function Equipo() {
     <div className="container py-5">
       <h2 className="text-center fw-semibold mb-4">Nuestro Equipo</h2>
       <p className="text-center mb-5">
-        Un grupo de expertas en el ámbito tributario, aduanero y fiscal con amplia trayectoria tanto en el sector público como privado.
+        Un grupo de expertas en el ámbito tributario, aduanero y fiscal con
+        amplia trayectoria tanto en el sector público como privado.
       </p>
 
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
@@ -58,7 +67,9 @@ function Equipo() {
               />
               <div className="card-body">
                 <h5 className="card-title text-primary">{miembro.nombre}</h5>
-                <h6 className="card-subtitle mb-2 text-muted">{miembro.especialidad}</h6>
+                <h6 className="card-subtitle mb-2 text-muted">
+                  {miembro.especialidad}
+                </h6>
                 <p className="card-text">{miembro.descripcion}</p>
               </div>
             </div>

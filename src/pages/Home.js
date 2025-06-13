@@ -1,6 +1,7 @@
 import CardItem from "../components/CardItem";
 import { useEffect, useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 function Home({ items }) {
   const [scrolled, setScrolled] = useState(false);
@@ -23,7 +24,7 @@ function Home({ items }) {
 
   return (
     <div>
-      <div 
+      <div
         className={`text-white d-flex align-items-center justify-content-center position-relative ${
           scrolled ? "blur-overlay" : ""
         }`}
@@ -50,12 +51,17 @@ function Home({ items }) {
             Contáctenos hoy para agendar una consulta gratuita y conocer más
             sobre nuestros servicios tributarios.
           </p>
-          <a href="#contacto" className="btn btn-primary btn-lg mt-2">
+          <a
+            href="https://api.whatsapp.com/send/?phone=50492656117&text&type=phone_number&app_absent=0"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-whatsapp"
+          >
+            <i className="bi bi-whatsapp fs-4 me-2"></i>
             Contáctenos
           </a>
         </div>
       </div>
-
 
       {/* Galería tipo video de capacitaciones */}
       <div
@@ -118,10 +124,30 @@ function Home({ items }) {
         <div className="logo-slider d-flex align-items-center">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="logo-group d-flex">
-              <img src="https://www.diunsa.hn/assets/imgs/logo.png" alt="Logo 1" className="mx-4" height={60} />
-              <img src="https://lamundial.com/website/image/website/1/logo" alt="Logo 2" className="mx-4" height={60} />
-              <img src="https://eldorado.hn/wp-content/uploads/2020/02/pacer.png" alt="Logo 3" className="mx-4" height={60} />
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/La_Prensa_%28Honduras%29.svg/2560px-La_Prensa_%28Honduras%29.svg.png" alt="Logo 4" className="mx-4" height={60} />
+              <img
+                src="https://www.diunsa.hn/assets/imgs/logo.png"
+                alt="Logo 1"
+                className="mx-4"
+                height={60}
+              />
+              <img
+                src="https://lamundial.com/website/image/website/1/logo"
+                alt="Logo 2"
+                className="mx-4"
+                height={60}
+              />
+              <img
+                src="https://eldorado.hn/wp-content/uploads/2020/02/pacer.png"
+                alt="Logo 3"
+                className="mx-4"
+                height={60}
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/La_Prensa_%28Honduras%29.svg/2560px-La_Prensa_%28Honduras%29.svg.png"
+                alt="Logo 4"
+                className="mx-4"
+                height={60}
+              />
             </div>
           ))}
         </div>

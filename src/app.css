@@ -59,3 +59,23 @@ body {
     transform: translateX(-50%);
   }
 }
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: white;
+  background: linear-gradient(90deg, #2f70c4, #2f70c4);
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background 0.4s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-whatsapp:hover {
+  background: linear-gradient(90deg, #2f70c4 0%, #25D366 100%);
+  color: white;
+}

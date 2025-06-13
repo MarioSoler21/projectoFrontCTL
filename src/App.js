@@ -5,12 +5,17 @@ import AboutUs from "./pages/AboutUs";
 import Services from "./pages/Services";
 import Equipo from "./pages/Equipo";
 import CalendarPage from "./pages/masters/CalendarPage";
-import CapacitacionesPage from "./pages/CapacitacionesPage"; 
+import CapacitacionesPage from "./pages/CapacitacionesPage";
+import CapacitacionesAdmin from "./pages/masters/CapacitacionesAdmin";
+import Register from "./pages/Register";
 import MainLayout from "./layouts/MainLayout";
 import Footer from "./components/Footer";
+import AdminRoute from "./components/AdminRoute";
+import './app.css'; // o la ruta correcta
+ // ✅ asegurate de tener este archivo
+
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import './App.css';
-
 
 const items = []; 
 
@@ -19,6 +24,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+
         <Route
           path="/home"
           element={
@@ -65,6 +72,18 @@ function App() {
             <MainLayout>
               <CapacitacionesPage />
             </MainLayout>
+          }
+        />
+
+        {/* ✅ RUTA ADMIN PROTEGIDA */}
+        <Route
+          path="/admin/capacitaciones"
+          element={
+            <AdminRoute>
+              <MainLayout>
+                <CapacitacionesAdmin />
+              </MainLayout>
+            </AdminRoute>
           }
         />
       </Routes>
