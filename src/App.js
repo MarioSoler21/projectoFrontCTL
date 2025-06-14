@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
@@ -11,20 +11,22 @@ import Register from "./pages/Register";
 import MainLayout from "./layouts/MainLayout";
 import Footer from "./components/Footer";
 import AdminRoute from "./components/AdminRoute";
-import './app.css'; // o la ruta correcta
- // ✅ asegurate de tener este archivo
 
-import 'bootstrap/dist/css/bootstrap.min.css'; 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './app.css';
 import './App.css';
 
-const items = []; 
+const items = [];
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Navigate to="/login" />} />
+
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+
 
         <Route
           path="/home"
@@ -75,7 +77,7 @@ function App() {
           }
         />
 
-        {/* ✅ RUTA ADMIN PROTEGIDA */}
+        {/* Ruta protegida para admin */}
         <Route
           path="/admin/capacitaciones"
           element={

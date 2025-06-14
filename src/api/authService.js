@@ -5,5 +5,5 @@ export const registerUser = async (email, password) => {
 }
 
 export const loginUser = async (email, password) => {
-    return axios.post("/auth/signIn", {email, password});
+    return axios.post("/auth/login", {email, password});
 }
