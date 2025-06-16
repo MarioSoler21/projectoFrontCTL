@@ -1,5 +1,4 @@
-import axios from "./axiosConfig"; // Asegúrate de que este archivo existe y está bien escrito
-
+import axios from "./axiosConfig";
 export const getAllCalendar = () => {
   return axios.get("/calendar/all");
 };
