@@ -5,11 +5,13 @@ function Calendar() {
   const [editIndex, setEditIndex] = useState(null);
   const [entries, setEntries] = useState([]);
   const [form, setForm] = useState({
-    name: '',
-    date: '',
-    time: '',
-    topic: ''
+    name: "",
+    email: "",
+    date: "",
+    time: "",
+    topic: "",
   });
+  const [errorMsg, setErrorMsg] = useState("");
 
   useEffect(() => {
     loadEntries();
@@ -48,13 +50,30 @@ function Calendar() {
   const handleOnSubmit = async (e) => {
     e.preventDefault();
     try {
+      const formatTime = (timeStr) => timeStr.slice(0, 5);
+
+      const isDuplicate = entries.some(
+        (entry) =>
+          entry.date === form.date &&
+          formatTime(entry.time) === form.time &&
+          entry.id !== editIndex
+      );
+
+      if (isDuplicate) {
+        setErrorMsg("Ya existe una asesoría agendada en esa fecha y hora.");
+        setTimeout(() => setErrorMsg(""), 5000);
+        return;
+      }
+
       if (editIndex !== null) {
         await calendarService.updateCalendar(editIndex, form);
         setEditIndex(null);
       } else {
         await calendarService.createCalendar(form);
       }
-      setForm({ name: '', date: '', time: '', topic: '' });
+
+      setForm({ name: "", email: "", date: "", time: "", topic: "" });
+      setErrorMsg("");
       loadEntries();
     } catch (error) {
       console.error("Error al guardar", error);
@@ -88,18 +107,34 @@ function Calendar() {
     "Declaración de informativa de dividendos",
     "Prescripción de la obligación Tributaria",
     "Delitos Tributarios",
-    "Impuestos Sobre Venta"
+    "Impuestos Sobre Venta",
   ];
 
   return (
     <div className="container py-4">
       <h2>Calendario de Asesorías</h2>
+
+      {errorMsg && (
+        <div className="alert alert-danger text-center fw-semibold">
+          {errorMsg}
+        </div>
+      )}
+
       <form onSubmit={handleOnSubmit} className="mb-4 p-3 border rounded bg-light">
         <input
           name="name"
           value={form.name}
           onChange={handleOnChange}
           placeholder="Nombre de la empresa o encargado"
+          className="form-control mb-2"
+          required
+        />
+        <input
+          name="email"
+          type="email"
+          value={form.email}
+          onChange={handleOnChange}
+          placeholder="Correo electrónico"
           className="form-control mb-2"
           required
         />
@@ -111,14 +146,20 @@ function Calendar() {
           className="form-control mb-2"
           required
         />
-        <input
+        <select
           name="time"
-          type="time"
           value={form.time}
           onChange={handleOnChange}
           className="form-control mb-2"
           required
-        />
+        >
+          <option value="">Seleccione una hora</option>
+          <option value="10:00">10:00 AM</option>
+          <option value="12:00">12:00 PM</option>
+          <option value="14:00">2:00 PM</option>
+          <option value="16:00">4:00 PM</option>
+          <option value="18:00">6:00 PM</option>
+        </select>
         <input
           name="topic"
           value={form.topic}
@@ -134,30 +175,37 @@ function Calendar() {
           ))}
         </datalist>
         <button className="btn btn-primary w-100">
-          {editIndex !== null ? 'Actualizar' : 'Agendar'}
+          {editIndex !== null ? "Actualizar" : "Agendar"}
         </button>
       </form>
 
       <table className="table">
         <thead>
           <tr>
-            <th>Nombre</th>
             <th>Fecha</th>
             <th>Hora</th>
-            <th>Tema</th>
-            <th>Acciones</th>
+               <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
           {entries.map((item) => (
             <tr key={item.id}>
-              <td>{item.name}</td>
               <td>{item.date}</td>
               <td>{item.time}</td>
-              <td>{item.topic}</td>
+
               <td>
-                <button className="btn btn-sm btn-warning me-2" onClick={() => handleOnEdit(item.id)}>Editar</button>
-                <button className="btn btn-sm btn-danger" onClick={() => handleOnDelete(item.id)}>Eliminar</button>
+                <button
+                  className="btn btn-sm btn-warning me-2"
+                  onClick={() => handleOnEdit(item.id)}
+                >
+                  Editar
+                </button>
+                <button
+                  className="btn btn-sm btn-danger"
+                  onClick={() => handleOnDelete(item.id)}
+                >
+                  Eliminar
+                </button>
               </td>
             </tr>
           ))}

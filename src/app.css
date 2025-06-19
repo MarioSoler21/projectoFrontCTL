@@ -79,3 +79,39 @@ body {
   background: linear-gradient(90deg, #2f70c4 0%, #25D366 100%);
   color: white;
 }
+.hero-blur-effect {
+  filter: blur(3px);
+  transition: filter 0.3s ease;
+}
+
+.hero-text-fade {
+  opacity: 0.8;
+  transition: opacity 0.9s ease;
+}
+.transition-opacity {
+  transition: opacity 1s ease-in-out;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
+.transition-navbar {
+  transition: top 0.4s ease;
+  z-index: 1040; 
+}
+
+.navbar-visible {
+  top: 0;
+}
+
+.navbar-hidden {
+  top: -90px;
+}
+body {
+  padding-top: 40px; 
+}
