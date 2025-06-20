@@ -247,6 +247,10 @@ function Home({ items }) {
           </div>
         </div>
       </div>
+<h3 className="animated-title text-white text-center fw-bold mb-4">
+  Empresas que confían en nosotros
+</h3>
+
 
       {/* Logos decorativos en movimiento */}
       <div className="logo-slider-container py-3">

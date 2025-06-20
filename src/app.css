@@ -115,3 +115,76 @@ body {
 body {
   padding-top: 40px; 
 }
+
+body {
+  background-color: #121430;
+  font-family: 'Segoe UI', sans-serif;
+  color: #eaeaea;
+}
+
+.form-control, .form-select {
+  background-color: #f5f5f5;
+  border-radius: 0.75rem;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+.table thead {
+  background: #dee2e6;
+}
+
+.bg-dark-subtle {
+  background-color: rgba(33, 37, 41, 0.1);
+  backdrop-filter: blur(4px);
+}
+.navbar-nav .nav-link {
+  color: #1b1b1b !important;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #2f70c4 !important;
+  text-decoration: underline;
+}
+
+.icon-link {
+  color: #2f70c4;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon-link:hover {
+  transform: scale(1.2);
+  color: #1b1f3b;
+}
+.animated-title {
+  animation: slideDownFade 1s ease-out;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes slideDownFade {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+.animated-title {
+  background: linear-gradient(90deg, #2f70c4, #5732b9);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: slideDownFade 1s ease-out;
+}
+.animated-title {
+  background: linear-gradient(90deg, #2f70c4, #5732b9);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: slideDownFade 1s ease-out;
+}

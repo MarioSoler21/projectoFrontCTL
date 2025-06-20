@@ -111,107 +111,89 @@ function Calendar() {
   ];
 
   return (
-    <div className="container py-4">
-      <h2>Calendario de Asesorías</h2>
+   <div className="container py-5 text-light" style={{ background: "linear-gradient(to right, #5732b9, #2f70c4)", borderRadius: "15px" }}>
+  <h2 className="fw-bold text-white text-center mb-2">Agenda tu Cita</h2>
+<h6 className="text-info text-center fst-italic mb-4" style={{ fontSize: "0.95rem" }}>
+  Al agendar una consulta fiscal, nuestro equipo se pondrá en contacto por correo electrónico para brindarle información sobre el proceso de pago y confirmación de la asesoría.
+</h6>
 
-      {errorMsg && (
-        <div className="alert alert-danger text-center fw-semibold">
-          {errorMsg}
-        </div>
-      )}
 
-      <form onSubmit={handleOnSubmit} className="mb-4 p-3 border rounded bg-light">
-        <input
-          name="name"
-          value={form.name}
-          onChange={handleOnChange}
-          placeholder="Nombre de la empresa o encargado"
-          className="form-control mb-2"
-          required
-        />
-        <input
-          name="email"
-          type="email"
-          value={form.email}
-          onChange={handleOnChange}
-          placeholder="Correo electrónico"
-          className="form-control mb-2"
-          required
-        />
-        <input
-          name="date"
-          type="date"
-          value={form.date}
-          onChange={handleOnChange}
-          className="form-control mb-2"
-          required
-        />
-        <select
-          name="time"
-          value={form.time}
-          onChange={handleOnChange}
-          className="form-control mb-2"
-          required
-        >
-          <option value="">Seleccione una hora</option>
+
+
+
+
+  {errorMsg && (
+    <div className="alert alert-danger text-center fw-semibold">
+      {errorMsg}
+    </div>
+  )}
+
+  <form onSubmit={handleOnSubmit} className="mb-4 p-4 rounded shadow-lg bg-dark-subtle">
+    <div className="row g-3">
+      <div className="col-md-6">
+        <input name="name" value={form.name} onChange={handleOnChange} placeholder="👤 Nombre de empresa o encargado" className="form-control" required />
+      </div>
+      <div className="col-md-6">
+        <input name="email" type="email" value={form.email} onChange={handleOnChange} placeholder="Correo electrónico" className="form-control" required />
+      </div>
+      <div className="col-md-4">
+        <input name="date" type="date" value={form.date} onChange={handleOnChange} className="form-control" required />
+      </div>
+      <div className="col-md-4">
+        <select name="time" value={form.time} onChange={handleOnChange} className="form-select" required>
+          <option value="">🕒 Hora</option>
           <option value="10:00">10:00 AM</option>
           <option value="12:00">12:00 PM</option>
           <option value="14:00">2:00 PM</option>
           <option value="16:00">4:00 PM</option>
           <option value="18:00">6:00 PM</option>
         </select>
-        <input
-          name="topic"
-          value={form.topic}
-          onChange={handleOnChange}
-          list="topics"
-          placeholder="Tema a tratar"
-          className="form-control mb-2"
-          required
-        />
+      </div>
+      <div className="col-md-4">
+        <input name="topic" value={form.topic} onChange={handleOnChange} list="topics" placeholder="Tema a tratar" className="form-control" required />
         <datalist id="topics">
           {availableTopics.map((t, idx) => (
             <option key={idx} value={t} />
           ))}
         </datalist>
-        <button className="btn btn-primary w-100">
-          {editIndex !== null ? "Actualizar" : "Agendar"}
+      </div>
+      <div className="col-12">
+        <button className="btn btn-whatsapp w-100">
+          {editIndex !== null ? " Actualizar Asesoría" : " Agendar Asesoría"}
         </button>
-      </form>
-
-      <table className="table">
-        <thead>
-          <tr>
-            <th>Fecha</th>
-            <th>Hora</th>
-               <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          {entries.map((item) => (
-            <tr key={item.id}>
-              <td>{item.date}</td>
-              <td>{item.time}</td>
-
-              <td>
-                <button
-                  className="btn btn-sm btn-warning me-2"
-                  onClick={() => handleOnEdit(item.id)}
-                >
-                  Editar
-                </button>
-                <button
-                  className="btn btn-sm btn-danger"
-                  onClick={() => handleOnDelete(item.id)}
-                >
-                  Eliminar
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      </div>
     </div>
+  </form>
+
+  <div className="table-responsive">
+    <table className="table table-dark table-hover table-bordered rounded shadow">
+      <thead className="table-light text-dark text-center">
+        <tr>
+          <th>Fecha</th>
+          <th> Hora</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody className="text-center">
+        {entries.map((item) => (
+          <tr key={item.id}>
+            <td>{item.date}</td>
+            <td>{item.time}</td>
+            <td>
+              <button className="btn btn-sm btn-outline-warning me-2" onClick={() => handleOnEdit(item.id)}>
+                 Editar
+              </button>
+              <button className="btn btn-sm btn-outline-danger" onClick={() => handleOnDelete(item.id)}>
+                 Eliminar
+              </button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>
+
   );
 }
 
