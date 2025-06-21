@@ -28,7 +28,7 @@ function Equipo() {
       especialidad: "Recursos Humanos y Derecho",
       descripcion:
         "Master en Recursos Humanos, Licenciada en Derecho. Con más de 32 años de experiencia en el campo privado y gubernamental. Secretaria Regional de la Administración Tributaria de la Dirección de Grandes Contribuyentes S.P.S., y Coordinadora de Recepción y Notificación del 2017 al 2023.",
-      foto: "https://i.ibb.co/vXk6FV3/claudia.jpg", // subila y reemplazá el link si es necesario
+      foto: "https://i.ibb.co/vXk6FV3/claudia.jpg", 
     },
     {
       nombre: "MAP. Sintia Calderón",

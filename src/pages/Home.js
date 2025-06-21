@@ -258,7 +258,7 @@ function Home({ items }) {
           {[...Array(2)].map((_, i) => (
             <div key={i} className="logo-group d-flex">
               <img
-                src="https://www.diunsa.hn/assets/imgs/logo.png"
+                src="https://i0.wp.com/corrugadosyempaqueshn.com/wp-content/uploads/2021/12/CYE-150-e1640819280748.png?fit=150%2C94&ssl=1"
                 alt="Logo 1"
                 className="mx-4"
                 height={60}
@@ -269,15 +269,16 @@ function Home({ items }) {
                 className="mx-4"
                 height={60}
               />
+
               <img
-                src="https://eldorado.hn/wp-content/uploads/2020/02/pacer.png"
+                src="https://www.infradehonduras.com.hn/wp-content/uploads/2020/02/infra-logo-1.png"
                 alt="Logo 3"
                 className="mx-4"
                 height={60}
               />
               <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/La_Prensa_%28Honduras%29.svg/2560px-La_Prensa_%28Honduras%29.svg.png"
-                alt="Logo 4"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ40pVgvHhHW9kN32QRP5xOhc4QJWGkk2UCA&s"
+                alt="Logo 3"
                 className="mx-4"
                 height={60}
               />
